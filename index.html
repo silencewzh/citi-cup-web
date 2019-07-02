@@ -14,12 +14,13 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
+    <link type="text/css" href="css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/fontAwesome.css">
     <link rel="stylesheet" href="css/tooplate-style.css">
+
 
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
@@ -29,10 +30,10 @@
 <![endif]-->
 
 
-<div class="ct" id="t1">
-    <div class="ct" id="t2">
-        <div class="ct" id="t3">
-            <div class="ct" id="t4">
+<div  id="t1">
+    <div  id="t2">
+        <div  id="t3">
+            <div  id="t4">
                 <section>
                     <ul>
                         <a href="#t1"> </a>
@@ -54,6 +55,22 @@
                         <div class="col-md-12" style="margin-left: 10%">
                             <h1>基金推荐系统</h1>
                         </div>
+                        <div class="mt-tabpage" js-tab="2">
+                            <div class="mt-tabpage-title">
+                                <a href="javascript:;" class="mt-tabpage-item mt-tabpage-item-cur">公告</a>
+                                <a href="javascript:;" class="mt-tabpage-item">决定</a>
+                                <a href="javascript:;" class="mt-tabpage-item">会议</a>
+                            </div>
+                            <div class="mt-tabpage-count">
+                                <ul class="mt-tabpage-cont__wrap">
+                                    <li class="mt-tabpage-item">Cont1</li>
+                                    <li class="mt-tabpage-item">Cont2</li>
+                                    <li class="mt-tabpage-item">Cont3</li>
+                                </ul>
+                            </div>
+                        </div>
+
+
                     </div>
                     <div class="page" id="p2">
                         <li class="icon fa fa-user"><span class="title">About Us</span>
@@ -219,6 +236,25 @@
             loadingMask.parentNode.removeChild(loadingMask);
         }
     }
+</script>
+
+<script type="text/javascript" src="js/mt-tabpage.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+        $('[js-tab=2]').tab({
+            mouse: 'over',   //切换方式：over，click
+            autoPlay: true,  //播放方式：false，true
+            curDisplay: 1,     //当前第一个打开
+            changeMethod: 'horizontal'  //切换选项：默认default，horizontal，vertical，opacity这4种方式
+        });
+
+        $('[js-tab=3]').tab({
+            curDisplay: 2,
+            changeMethod: 'horizontal'
+        });
+
+    });
 </script>
 </body>
 </html>
