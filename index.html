@@ -52,7 +52,8 @@
                         <!--                         <div class="primary-button">-->
                         <!--                         <a href="#t2">Discover More</a></div>-->
                         <!--                     </li>   -->
-                        <div class="col-md-12" style="margin-left: 10%">
+                        <li class="icon" style="margin-top: 10%">
+                        <div class="col-md-12" >
                             <h1>基金推荐系统</h1>
                         </div>
                         <div class="mt-tabpage" js-tab="2">
@@ -61,15 +62,15 @@
                                 <a href="javascript:;" class="mt-tabpage-item">决定</a>
                                 <a href="javascript:;" class="mt-tabpage-item">会议</a>
                             </div>
-                            <div class="mt-tabpage-count">
-                                <ul class="mt-tabpage-cont__wrap">
-                                    <li class="mt-tabpage-item">Cont1</li>
-                                    <li class="mt-tabpage-item">Cont2</li>
-                                    <li class="mt-tabpage-item">Cont3</li>
+                            <div class="mt-tabpage-count" style="color: #4984a6;margin: 0;padding: 0">
+                                <ul class="mt-tabpage-cont__wrap" style="color: #4984a6;margin: 0;padding: 0">
+                                    <li class="mt-tabpage-item" style="color: #4984a6;margin: 0;padding: 0">test1</li>
+                                    <li class="mt-tabpage-item"style="color: #4984a6;margin: 0;padding: 0">Cont2</li>
+                                    <li class="mt-tabpage-item"style="color: #4984a6;margin: 0;padding: 0">Cont3</li>
                                 </ul>
                             </div>
                         </div>
-
+                        </li>
 
                     </div>
                     <div class="page" id="p2">
@@ -244,7 +245,8 @@
 
         $('[js-tab=2]').tab({
             mouse: 'over',   //切换方式：over，click
-            autoPlay: true,  //播放方式：false，true
+            // autoPlay: true,  //播放方式：false，true
+
             curDisplay: 1,     //当前第一个打开
             changeMethod: 'horizontal'  //切换选项：默认default，horizontal，vertical，opacity这4种方式
         });
