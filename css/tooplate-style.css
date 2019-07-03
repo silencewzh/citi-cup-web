@@ -248,7 +248,7 @@ a {
 
 .primary-button a {
 	font-family: 'Montserrat', sans-serif;
-	display: inline-block;
+	/*display: inline-block;*/
 	padding: 15px 25px;
 	background-color: #63adcc;
 	color: #fff;
@@ -269,8 +269,10 @@ a {
 
 #p1 .primary-button {
 	display: block;
-	margin-top: -20px;
-  padding-bottom: 60px;
+	/*margin-top: -20px;*/
+  /*padding-bottom: 60px;*/
+	width: fit-content;
+	height: fit-content;
 }
 
 #p1 span {
@@ -494,7 +496,7 @@ a {
   }
 
   #p1 .primary-button {
-    margin-bottom: 100px;
+    margin-bottom: 30px;
   }
 
 	#p1 h4 {
