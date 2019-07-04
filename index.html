@@ -24,7 +24,8 @@
 
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
-<body>
+<body onload="loadaction()">
+
 <!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
@@ -63,7 +64,7 @@
                                 <a href="javascript:;" class="mt-tabpage-item">会议</a>
                             </div>
                             <div class="mt-tabpage-count" style="color: #4984a6;margin: 0;padding: 0">
-                                <ul class="mt-tabpage-cont__wrap" style="color: #4984a6;margin: 0;padding: 0">
+                                <ul class="mt-tabpage-cont__wrap" s tyle="color: #4984a6;margin: 0;padding: 0">
                                     <li class="mt-tabpage-item" style="color: #4984a6;margin: 0;padding: 0">test1</li>
                                     <li class="mt-tabpage-item"style="color: #4984a6;margin: 0;padding: 0">Cont2</li>
                                     <li class="mt-tabpage-item"style="color: #4984a6;margin: 0;padding: 0">
@@ -202,6 +203,20 @@
 <script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
 
+<script>
+    function loadaction() {
+        // sleep(500).then(() => {
+        //
+        // })
+
+    }
+    function sleep (time) {
+        return new Promise((resolve) => setTimeout(resolve, time));
+    }
+
+</script>
+
+
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script>
     (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
@@ -250,7 +265,7 @@
 
         $('[js-tab=2]').tab({
             mouse: 'over',   //切换方式：over，click
-            // autoPlay: true,  //播放方式：false，true
+             autoPlay: true,  //播放方式：false，true
 
             curDisplay: 1,     //当前第一个打开
             changeMethod: 'horizontal'  //切换选项：默认default，horizontal，vertical，opacity这4种方式
