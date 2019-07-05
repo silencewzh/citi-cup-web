@@ -13,6 +13,7 @@
     -->
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link type="text/css" href="css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -65,7 +66,11 @@
                             </div>
                             <div class="mt-tabpage-count" style="color: #4984a6;margin: 0;padding: 0">
                                 <ul class="mt-tabpage-cont__wrap" s tyle="color: #4984a6;margin: 0;padding: 0">
-                                    <li class="mt-tabpage-item" style="color: #4984a6;margin: 0;padding: 0">test1</li>
+                                    <li class="mt-tabpage-item" style="color: #4984a6;margin: 0;padding: 0">
+                                        <div id="page1">
+
+
+                                        </div></li>
                                     <li class="mt-tabpage-item"style="color: #4984a6;margin: 0;padding: 0">Cont2</li>
                                     <li class="mt-tabpage-item"style="color: #4984a6;margin: 0;padding: 0">
                                         <p>test</p>
@@ -205,9 +210,30 @@
 
 <script>
     function loadaction() {
-        // sleep(500).then(() => {
-        //
-        // })
+        var xmlhttp;
+        if (window.XMLHttpRequest)
+        {
+            //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+            xmlhttp=new XMLHttpRequest();
+        }
+        else
+        {
+            // IE6, IE5 浏览器执行代码
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function()
+        {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+                var str = xmlhttp.responseText;
+                var obj = JSON.parse(str);//JSON字符串转JSON对象
+                document.getElementById("page1").innerHTML=obj[0].fundName;
+            }
+        }
+        xmlhttp.open("GET","http://47.100.120.235:8081/mainInfo?fundName=%E4%B8%AD%E6%B5%B7%E5%8F%AF%E8%BD%AC%E5%80%BA%E5%80%BA%E5%88%B8A",true);
+        //xmlhttp.setRequestHeader("Access-Control-Allow-Origin","*");
+        xmlhttp.send();
+        document.getElementById("page1").innerHTML=xmlhttp.response.toString();
 
     }
     function sleep (time) {
