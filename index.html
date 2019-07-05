@@ -24,6 +24,88 @@
 
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
+
+<style type="text/css">
+    button
+    {
+        background-color:black;
+        color:white;
+        opacity:0.6;
+        width: 50px;
+        height: 40px;
+        font-family: 'Microsoft YaHei';
+        font-size: 13px;
+        font-weight:bold
+    }
+    a {
+        color: #c75f3e;
+    }
+
+    #mytable {
+        width: 700px;
+        padding: 0;
+        margin: 0;
+    }
+
+    caption {
+        padding: 0 0 5px 0;
+        width: 700px;
+        font: italic 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+        text-align: right;
+    }
+
+    th {
+        font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+        color: #4f6b72;
+        border-right: 1px solid #C1DAD7;
+        border-bottom: 1px solid #C1DAD7;
+        border-top: 1px solid #C1DAD7;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        text-align: left;
+        padding: 6px 6px 6px 12px;
+    }
+
+    th.nobg {
+        border-top: 0;
+        border-left: 0;
+        border-right: 1px solid #C1DAD7;
+        background: none;
+    }
+
+    td {
+        border-right: 1px solid #C1DAD7;
+        border-bottom: 1px solid #C1DAD7;
+        background: #fff;
+        font-size:11px;
+        padding: 6px 6px 6px 12px;
+        color: #4f6b72;
+    }
+
+
+    td.alt {
+        background: #F5FAFA;
+        color: #797268;
+    }
+
+    th.spec {
+        border-left: 1px solid #C1DAD7;
+        border-top: 0;
+
+        font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+    }
+
+    th.specalt {
+        border-left: 1px solid #C1DAD7;
+        border-top: 0;
+
+        font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+        color: #797268;
+    }
+</style>
+<!--列表-->
+
+
 <body onload="loadaction()">
 
 <!--[if lt IE 8]>
@@ -80,26 +162,61 @@
 
                     </div>
                     <div class="page" id="p2">
-                        <li class="icon fa fa-user"><span class="title">About Us</span>
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="left-text">
-                                            <h4>We are Kinetic</h4>
-                                            <p>This kinetic HTML template is provided by Tooplate for free of charge. You may use this layout for your website. Please tell your friends about Tooplate. Thank you.<br><br>Cras suscipit, sem vel cursus iaculis, nibh augue placerat enim, in varius dolor turpis at augue. Nulla facilisi. In quis sem pellentesque, tristique ligula non, tincidunt ipsum. Curabitur porttitor, justo id egestas egestas, enim augue lacinia quam, et volutpat velit augue sodales velit.</p>
-                                            <div class="primary-button">
-                                                <a href="#t3">Discover More</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="right-image">
-                                            <img src="img/right-about-image.png" alt="">
-                                        </div>
-                                    </div>
+<!--                        <li class="icon fa fa-user"><span class="title">About Us</span>-->
+<!--                            <div class="container">-->
+<!--                                <div class="row">-->
+<!--                                    <div class="col-md-6">-->
+<!--                                        <div class="left-text">-->
+<!--                                            <h4>We are Kinetic</h4>-->
+<!--                                            <p>This kinetic HTML template is provided by Tooplate for free of charge. You may use this layout for your website. Please tell your friends about Tooplate. Thank you.<br><br>Cras suscipit, sem vel cursus iaculis, nibh augue placerat enim, in varius dolor turpis at augue. Nulla facilisi. In quis sem pellentesque, tristique ligula non, tincidunt ipsum. Curabitur porttitor, justo id egestas egestas, enim augue lacinia quam, et volutpat velit augue sodales velit.</p>-->
+<!--                                            <div class="primary-button">-->
+<!--                                                <a href="#t3">Discover More</a>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-6">-->
+<!--                                        <div class="right-image">-->
+<!--                                            <img src="img/right-about-image.png" alt="">-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </li>-->
+                        <li class="icon fa fa-user"><span class="title">基金种类</span>
+                            <table id="mytable" cellspacing="0" summary="Weather Collection">
+                                <div style="text-align: center">
+                                    <!--                                <caption></caption>-->
+                                    <tr>
+                                        <th scope="col" abbr="Configurations" class="nobg">基金公司</th>
+                                        <th scope="col" abbr="Dual 1.8"><div style="text-align: center;">负责人</div></th>
+
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" abbr="Model" class="spec">贝莱德基金公司</th>
+                                        <td>不知道</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" abbr="G5 Processor" class="specalt">千合资本</th>
+                                        <td class="alt">王亚伟</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" abbr="G5 Processor" class="specalt">千合资本</th>
+                                        <td class="alt">王亚伟</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" abbr="G5 Processor" class="specalt">千合资本</th>
+                                        <td class="alt">王亚伟</td>
+                                    </tr>
+
                                 </div>
-                            </div>
+                            </table>
                         </li>
+
+
+
+
+
                     </div>
                     <div class="page" id="p3">
                         <li class="icon fa fa-image"><span class="title">Our Gallery</span>
@@ -205,10 +322,7 @@
 
 <script>
     function loadaction() {
-        // sleep(500).then(() => {
-        //
-        // })
-
+        sleep()
     }
     function sleep (time) {
         return new Promise((resolve) => setTimeout(resolve, time));
