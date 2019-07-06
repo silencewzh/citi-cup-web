@@ -106,7 +106,7 @@
 <!--列表-->
 
 
-<body onload="loadaction()">
+<body onload="loadXMLDoc()">
 
 <!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -150,31 +150,42 @@
                                     <li class="mt-tabpage-item"style="color: #4984a6;margin: 0;padding: 0">
                                         <div class="container">
                                             <div class="leftbox">
-                                                <table  style="line-height:25px;" rules="none" border="0" cellpadding="0">
+                                                <div class="upbox">
+                                                    123
+                                                </div >
+                                                <table  class="downbox" style="line-height:50px;" rules="none" border="0" cellpadding="0">
                                                     <tr>
                                                         <td>基金代码：</td>
-                                                        <td>row 1, cell 2</td>
+                                                        <td id="1">1</td>
                                                     </tr>
                                                     <tr>
                                                         <td>基金名：</td>
-                                                        <td>row 2, cell 2</td>
+                                                        <td id="2">row 2, cell 2</td>
                                                     </tr>
                                                     <tr>
                                                         <td>基金涨幅：</td>
-                                                        <td>row 2, cell 2</td>
+                                                        <td id="3">row 2, cell 2</td>
                                                     </tr>
                                                     <tr>
                                                         <td>基金类型：</td>
-                                                        <td>row 2, cell 2</td>
+                                                        <td id="4">row 2, cell 2</td>
                                                     </tr>
                                                     <tr>
                                                         <td>基金风险：</td>
-                                                        <td>row 2, cell 2</td>
+                                                        <td id="5">row 2, cell 2</td>
                                                     </tr>
                                                 </table>
                                             </div>
                                             <div class="rightbox">
-                                                    2
+                                                <div class="topbox"></div>
+                                                <div class="bottombox">
+                                                    <div class="bottomleft">
+
+                                                    </div>
+                                                    <div class="bottomright">
+
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </li>
@@ -405,7 +416,7 @@
 
 <script type="text/javascript" src="js/mt-tabpage.js"></script>
 <script>
-    function loadXMLDoc(id)
+    function loadXMLDoc()
     {
         //setTimeout(function(){ alert("Hello"); }, 1000);
         var xmlhttp;
@@ -425,10 +436,14 @@
             {
                 var str = xmlhttp.responseText;
                 var obj = JSON.parse(str);//JSON字符串转JSON对象
-                document.getElementById(id).innerHTML = obj[0].fundName + obj[0].fundIncre + obj[0].fundType + obj[0].fundRisk;
+                document.getElementById(1).innerHTML = ( "0000000000000000" + document.getElementById(1).innerText ).substr( -6 );
+                document.getElementById(2).innerHTML = obj[0].fundName;
+                document.getElementById(3).innerHTML = obj[0].fundIncre;
+                document.getElementById(4).innerHTML = obj[0].fundType;
+                document.getElementById(5).innerHTML = obj[0].fundRisk;
             }
         }
-        xmlhttp.open("GET","http://47.100.120.235:8081/mainInfo?fundId="+document.getElementById("information"+id).innerText,true);
+        xmlhttp.open("GET","http://47.100.120.235:8081/mainInfo?fundId="+document.getElementById(1).innerText,true);
         //xmlhttp.setRequestHeader("Access-Control-Allow-Origin","*");
         xmlhttp.send();
     }
