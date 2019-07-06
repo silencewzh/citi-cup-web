@@ -59,3 +59,21 @@ svg{
   text-align: center;
 
 }
+.container {
+  width: 1000px;
+  height: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+.leftbox {
+  width: 300px;  /*左侧固定宽度值*/
+  height: 100%;
+  position: absolute;
+  background-color: #aadddd;
+}
+.rightbox {
+  height: 100%;
+  margin-left: 300px; /*边距值=左侧固定宽度值*/
+  position: relative;
+  background-color: #f08844;
+}
