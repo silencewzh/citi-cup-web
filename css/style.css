@@ -66,14 +66,60 @@ svg{
   position: relative;
 }
 .leftbox {
-  width: 300px;  /*左侧固定宽度值*/
-  height: 100%;
-  position: absolute;
-  background-color: #aadddd;
+    width: 300px;  /*左侧固定宽度值*/
+    height: 100%;
+    position: absolute;
+    background-color: #aadddd;
+    display: flex;
+    flex-direction:column;
+    flex-wrap: wrap;
 }
 .rightbox {
-  height: 100%;
-  margin-left: 300px; /*边距值=左侧固定宽度值*/
-  position: relative;
-  background-color: #f08844;
+    height: 100%;
+    margin-left: 300px; /*边距值=左侧固定宽度值*/
+    position: relative;
+    background-color: #f08844;
+    display: flex;
+    flex-direction:column;
+    flex-wrap: wrap;
+}
+.upbox{
+    width:100%;
+    order:1;
+    flex-grow: 1;
+    background-color: #0b2e13;
+}
+.downbox{
+    width:100%;
+    order:2;
+    flex-grow: 1;
+}
+.topbox{
+    width:100%;
+    height:400px;
+    order:1;
+    flex-grow:1;
+    background-color: #1c7430;
+}
+.bottombox{
+    width:100%;
+    height:calc(100% - 400px);
+    order:2;
+    flex-grow:1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #9f7f5f;
+}
+.bottomleft{
+    height:100%;
+    order:1;
+    flex-grow:1;
+    background-color: #6610f2;
+}
+.bottomright{
+    height:100%;
+    order:2;
+    flex-grow:1;
+    background-color: orangered;
 }
