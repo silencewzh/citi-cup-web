@@ -1,58 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CSS3动态背景登录页面</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-    <link href="css/login/style.css" rel="stylesheet" type="text/css" media="all" />
-
+    <meta charset="utf-8">
+    <title>Bootstrap 实例 - 模态框（Modal）插件事件</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-<!-- main -->
-<div class="main-w3layouts wrapper">
-    <div class="main-agileinfo">
-        <div class="agileits-top">
-            <form action="#" method="post">
-                <input class="text" type="text" name="Username" placeholder="姓名" required="">
-                <input class="text" type="password" name="password" placeholder="密码" required="">
-                <div class="wthree-text">
-                    <ul>
-                        <li>
-                            <label class="anim">
-                                <input type="checkbox" class="checkbox" required="">
-                                <span> 记住 ?</span>
-                            </label>
-                        </li>
-                        <li><a href="#">忘记密码 ?</a> </li>
-                    </ul>
-                    <div class="clear"> </div>
-                </div>
-                <input type="submit" value="登录">
-            </form>
-            <p>创建一个账号? <a href="#"> 立即登录!</a></p>
-        </div>
-    </div>
-    <!-- copyright -->
-    <!--		<div class="w3copyright-agile">-->
-    <!--			<p>© 2017 All rights Reserved</p>-->
-    <!--		</div>-->
-    <!-- //copyright -->
-    <ul class="w3lsg-bubbles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-</div>
-<!-- //main -->
+<h2>模态框（Modal）插件事件</h2>
+<!-- 按钮触发模态框 -->
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" data>
+    用户登录
+</button>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+     >
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
+                </button>
+<!--                <h4 class="modal-title" id="myModalLabel">-->
+<!--                    模态框（Modal）标题-->
+<!--                </h4>-->
+            </div>
+            <div class="modal-body">
+                跳转至花旗用户登录
+            </div>
+            <div class="modal-footer" >
+                <button   type="button" class="btn btn-default" data-dismiss="modal">
+                    关闭
+                </button>
+                <a href="index.html">
+                <button type="button" class="btn btn-primary" >
+                    确定跳转
+                </button>
+                </a>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script>
+    $(function () { $('#myModal').modal('hide')});
+</script>
+<script>
+    $(function () { $('#myModal').on('hide.bs.modal', function () {
+        alert('未登录无法实现部分功能');})
+    });
+</script>
 
 </body>
 </html>
