@@ -2,30 +2,35 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Bootstrap 实例 - 模态框（Modal）插件事件</title>
+    <title>登录界面</title>
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
-
+<body class="bg-light"  background="img/about-bg.png">
+<div class="col-md-12"  style="text-align: center;margin-top: 10%">
 <h2>模态框（Modal）插件事件</h2>
 <!-- 按钮触发模态框 -->
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" data>
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"  style="margin-top: 30px">
     用户登录
 </button>
+</div>
+
+
+
 <!-- 模态框（Modal） -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
      >
 
     <div class="modal-dialog">
         <div class="modal-content">
+
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
                 </button>
-<!--                <h4 class="modal-title" id="myModalLabel">-->
-<!--                    模态框（Modal）标题-->
-<!--                </h4>-->
+                <h4 class="modal-title" id="myModalLabel">
+                    用户登录
+                </h4>
             </div>
             <div class="modal-body">
                 跳转至花旗用户登录

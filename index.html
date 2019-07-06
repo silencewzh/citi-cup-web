@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/fontAwesome.css">
     <link rel="stylesheet" href="css/tooplate-style.css">
+<!--表格-->
+    <link rel="stylesheet" href="dist/excel-bootstrap-table-filter-style.css" />
+
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
     <link rel="stylesheet" href="css/radar-chart.css">
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
@@ -179,7 +182,7 @@
                                         <div class="container">
                                             <div class="leftbox">
                                                 <div class="upbox">
-
+                                                    123
                                                 </div >
                                                 <table  class="downbox" style="line-height:50px;" rules="none" border="0" cellpadding="0">
                                                     <tr>
@@ -205,9 +208,7 @@
                                                 </table>
                                             </div>
                                             <div class="rightbox">
-                                                <div class="topbox">
-                                                    <div class="chart-container"></div>
-                                                </div>
+                                                <div class="topbox"></div>
                                                 <div class="bottombox">
                                                     <div class="bottomleft">
 
@@ -395,6 +396,24 @@
 <script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
 
+<!--表格-->
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="dist/excel-bootstrap-table-filter-bundle.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#table').excelTableFilter({
+            'captions':{ a_to_z: '升序排列', z_to_a: '降序排列', search: '搜索', select_all: '全部选择' }
+        });
+        $('#table2').excelTableFilter({
+            'captions':{ a_to_z: '升序排列', z_to_a: '降序排列', search: '搜索', select_all: '全部选择' }
+        });
+        $('#table3').excelTableFilter({
+            'captions':{ a_to_z: '升序排列', z_to_a: '降序排列', search: '搜索', select_all: '全部选择' }
+        });
+    });
+</script>
+
+
 <script>
     function loadaction() {
         sleep();
@@ -449,6 +468,38 @@
 </script>
 
 <script type="text/javascript" src="js/mt-tabpage.js"></script>
+<script>
+    function loadXMLDoc()
+    {
+        //setTimeout(function(){ alert("Hello"); }, 1000);
+        var xmlhttp;
+        if (window.XMLHttpRequest)
+        {
+            //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+            xmlhttp=new XMLHttpRequest();
+        }
+        else
+        {
+            // IE6, IE5 浏览器执行代码
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function()
+        {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+                var str = xmlhttp.responseText;
+                var obj = JSON.parse(str);//JSON字符串转JSON对象
+                document.getElementById(1).innerHTML = ( "0000000000000000" + document.getElementById(1).innerText ).substr( -6 );
+                document.getElementById(2).innerHTML = obj[0].fundName;
+                document.getElementById(3).innerHTML = obj[0].fundIncre;
+                document.getElementById(4).innerHTML = obj[0].fundType;
+                document.getElementById(5).innerHTML = obj[0].fundRisk;
+            }
+        };
+        xmlhttp.open("GET","http://47.100.120.235:8081/mainInfo?fundId="+document.getElementById(1).innerText,true);
+        //xmlhttp.setRequestHeader("Access-Control-Allow-Origin","*");
+        xmlhttp.send();
+    }
 <script src="js/data.js">
 </script>
 <script type="text/javascript">
