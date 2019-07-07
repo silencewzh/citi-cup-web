@@ -99,7 +99,7 @@ svg{
     height:400px;
     order:1;
     flex-grow:1;
-    background-color: #1c7430;
+    background: #fff9f8;
 }
 .bottombox{
     width:100%;
