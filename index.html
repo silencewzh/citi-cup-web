@@ -20,8 +20,36 @@
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/fontAwesome.css">
     <link rel="stylesheet" href="css/tooplate-style.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    <link rel="stylesheet" href="css/radar-chart.css">
 <!--表格-->
     <link rel="stylesheet" href="dist/excel-bootstrap-table-filter-style.css" />
+    <script type="text/javascript" src="//d3js.org/d3.v3.js"></script>
+    <script type="text/javascript" src="js/radar-chart.js"></script>
+    <script type="text/javascript">
+        var data = [
+            {
+                className: '用户', // optional can be used for styling
+                axes: [
+                    {axis: "盈利能力", value: 13},
+                    {axis: "风险系数", value: 6},
+                    {axis: "公司评估", value: 5},
+                    {axis: "经理水平", value: 9},
+                    {axis: "舆情导向", value: 2}
+                ]
+            },
+            {
+                className: '基金',
+                axes: [
+                    {axis: "盈利能力", value: 8},
+                    {axis: "风险系数", value: 7},
+                    {axis: "公司评估", value: 10},
+                    {axis: "经理水平", value: 13},
+                    {axis: "舆情导向", value: 9}
+                ]
+            }
+        ];
+    </script>
 
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
@@ -178,7 +206,9 @@
                                                 </table>
                                             </div>
                                             <div class="rightbox">
-                                                <div class="topbox"></div>
+                                                <div class="topbox">
+                                                    <div class="chart-container"></div>
+                                                </div>
                                                 <div class="bottombox">
                                                     <div class="bottomleft">
 
@@ -519,6 +549,10 @@
     </div>
 </div>
 
+<script type="text/javascript">
+    RadarChart.defaultConfig.levelTick = true;
+    RadarChart.draw(".chart-container", data);
+</script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
